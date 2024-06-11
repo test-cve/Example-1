@@ -1,9 +1,6 @@
 name: Basic Deployment
 run-name: Gha-session-basic
-on:
-  push:
-    branches:
-      - main
+on: [workflow_dispatch]
 jobs:
   deployment-job:
     runs-on: ubuntu-latest
