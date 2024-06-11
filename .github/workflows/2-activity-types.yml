@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Display event info
-      run:  echo "Event name- ${{ github.event_name }}"
+      run:  echo "Event name- ${{ github }}"
     - name: Perform actions based on event type
       run: |
         if [ "${{ github.event_name }}" == "push" ]; then
