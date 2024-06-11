@@ -1,0 +1,21 @@
+name: Basic Deployment
+run-name: Gha-session-basic
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deployment-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: echo "Installing Dependencies "
+      - name: Test module
+        run: echo "**** STARTING TESTS 🔎 ****"
+      - name: Build the Module
+        run: echo "**** BUILDING THE MODULE ****"
+      - name: Deploy Module
+        if: github.ref == 'refs/heads/main'
+        run: echo "Deploy Successful! 🎉"
