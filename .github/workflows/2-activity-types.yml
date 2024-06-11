@@ -1,0 +1,27 @@
+name: Example-ActivityTypes Workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  issues:
+    types: [opened, edited, closed]
+jobs:
+  activity_types_example:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Display event info
+      run:  echo "Event name: ${{ github.event_name }}"
+    - name: Perform actions based on event type
+      run: |
+        if [ "${{ github.event_name }}" == "push" ]; then
+          echo "This is a push event"
+        elif [ "${{ github.event_name }}" == "pull_request" ]; then
+          echo "This is a pull request event"
+        elif [ "${{ github.event_name }}" == "issues" ]; then
+          echo "This is an issue event"
+        fi
