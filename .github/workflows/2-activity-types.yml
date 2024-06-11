@@ -1,13 +1,13 @@
 name: Example-ActivityTypes Workflow
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  issues:
-    types: [opened, edited, closed]
+on: [workflow_dispatch]
+  #push:
+    #branches:
+      #- main
+  #pull_request:
+    #branches:
+      #- main
+  #issues:
+    #types: [opened, edited, closed]
 jobs:
   activity_types_example:
     runs-on: ubuntu-latest
